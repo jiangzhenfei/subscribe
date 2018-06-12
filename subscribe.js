@@ -28,7 +28,7 @@ var Event = ( function() {
         //arguments 的第一个参数必须是触发哪一类订阅，比如今天创达所有卖房子的消息
         var key = Array.prototype.shift.call( arguments )
         fns = clientList[ key ]
-        if( !fns || fns.listen === 0 ){
+        if( !fns || fns.length === 0 ){
             return false
         }
         for( var i = 0, fn; fn = fns[ i++ ]; ){
